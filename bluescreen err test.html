@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Test Błędów i Niedozwolonych Tagów</title>
+</head>
+<body>
+    <h1>Strona Testowa - Debug Kontrolny</h1>
+    <p>Ten akapit jest poprawny, ale zaraz zaczną się schody...</p>
+    
+    <broken>
+        <span style="color: red;">Ten tekst jest wewnątrz niedozwolonego tagu &lt;broken&gt;.</span>
+    </broken>
+
+    <!-- Niedomknięty tag i dziwne atrybuty -->
+    <div class="error-box" data-broken="true>
+        <p>Brak domknięcia cudzysłowu w atrybucie wyżej oraz brak zamknięcia div niżej.
+        
+        <ul>
+            <li>Pierwszy element listy</li>
+            <li>Drugi element (bez zamknięcia li)
+        </ul>
+
+    <!-- Losowe śmieci składniowe -->
+    <invalid_tag_test>
+        <h2 To jest nagłówek z uszkodzonymi atrybutami = "zle>
+        <a href="/test-awarii">Kliknij tutaj, żeby przetestować link względny</a>
+    </invalid_tag_test>
+
+    <hr>
+    <p>Koniec pliku testowego. Parser powinien to przepuścić lub bezpiecznie zgłosić błąd.</p>
+</body>
+</html>
